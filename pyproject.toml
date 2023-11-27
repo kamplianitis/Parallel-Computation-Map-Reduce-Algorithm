@@ -30,6 +30,7 @@ flake8 = "^6.1.0"
 bandit = "^1.7.5"
 fixit = "^2.1.0"
 jedi = "^0.19.1"
+safety = "^2.3.5"
 
 [tool.black]
 line-length = 79

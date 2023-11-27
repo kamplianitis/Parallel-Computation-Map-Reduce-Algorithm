@@ -33,11 +33,11 @@ jobs:
             - name: Install dependencies
               run: poetry install
             - name: Run black
-              run: poetry run black . --check --line-length=88
+              run: poetry run black . --check --line-length=79 -t py39
             - name: Run isort
-              run: poetry run isort . --force-single-line-imports", "--line-length", "88", "--profile", "black
+              run: poetry run isort . --multi-line 3 --profile black --python-version 39
             - name: Run flake8
-              run: poetry run flake8 --max-line-length 88 --extend-ignore=E501,E203,E503
+              run: poetry run flake8 --max-doc-length 72 --ignore E211,E999,F401,F821,W503
             - name: Run bandit
               run: poetry run bandit .
             - name: Run safety
