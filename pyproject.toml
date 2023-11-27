@@ -23,6 +23,21 @@ mkdocs = "*"
 [tool.poetry.dependencies]
 python = "^3.9"
 django = "^4.2.6"
+pre-commit = "^3.5.0"
+isort = "^5.12.0"
+black = "^23.11.0"
+flake8 = "^6.1.0"
+bandit = "^1.7.5"
+fixit = "^2.1.0"
+jedi = "^0.19.1"
+
+[tool.black]
+line-length = 79
+target-version = ['py27']
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+py_version = 27
 
 
 [build-system]

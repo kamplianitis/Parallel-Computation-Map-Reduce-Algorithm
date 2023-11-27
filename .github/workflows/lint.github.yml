@@ -1,0 +1,44 @@
+name: lint
+on:
+    push:
+        branches:
+            - main
+            - dev
+            - test
+    pull_request:
+        branches:
+            - main
+            - dev
+    schedule:
+        - cron: '0 2 * * THU'
+
+jobs:
+    code-quality:
+        name: lint
+        strategy:
+            matrix:
+                python-version: [3.9.17]
+                poetry-version: [1.5.1]
+                os: [ubuntu-latest]
+        runs-on: ${{matrix.os}}
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-python@v2
+              with:
+                python-version: ${{ matrix.python-version }}
+            - name: Run Image
+              uses: abatilo/actions-poetry@v2.0.0
+              with:
+                poetry-version: ${{ matrix.poetry-version }}
+            - name: Install dependencies
+              run: poetry install
+            - name: Run black
+              run: poetry run black . --check --line-length=88
+            - name: Run isort
+              run: poetry run isort . --force-single-line-imports", "--line-length", "88", "--profile", "black
+            - name: Run flake8
+              run: poetry run flake8 --max-line-length 88 --extend-ignore=E501,E203,E503
+            - name: Run bandit
+              run: poetry run bandit .
+            - name: Run safety
+              run: poetry run safety check
