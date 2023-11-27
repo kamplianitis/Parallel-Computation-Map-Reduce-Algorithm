@@ -31,14 +31,11 @@ bandit = "^1.7.5"
 fixit = "^2.1.0"
 jedi = "^0.19.1"
 safety = "^2.3.5"
-
-[tool.black]
-line-length = 79
-target-version = ['py27']
-[tool.isort]
-profile = "black"
-multi_line_output = 3
-py_version = 27
+psycopg = "^3.1.13"
+psycopg2-binary="*"
+django-rest-swagger = "^2.2.0"
+djangorestframework = "^3.14.0"
+drf-yasg = "^1.21.5"
 
 
 [build-system]
