@@ -31,13 +31,13 @@ This repository contains an implementation of MapReduce in Django, a high-level 
 3. Apply migrations:
 
     ```bash
-    python manage.py migrate
+    poetry run python manage.py migrate
     ```
 
 4. Start the development server:
 
     ```bash
-    python manage.py runserver
+    poetry run python manage.py runserver
     ```
 
 5. Visit `http://127.0.0.1:8000/` in your browser to access the Django admin interface.
