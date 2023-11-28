@@ -22,12 +22,12 @@ This repository contains an implementation of MapReduce in Django, a high-level 
     ```bash
     git clone https://github.com/your-username/django-mapreduce.git
     ```
-    
+
 2. Install poetry dependencies
     ```bash
     poetry install
     ```
-    
+
 3. Apply migrations:
 
     ```bash
@@ -59,4 +59,3 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
  - Inspired by the MapReduce framework developed by Google.
 
 Feel free to explore and enhance this Django MapReduce implementation according to your project's needs! If you have any questions or feedback, please create an issue in the repository.
-
