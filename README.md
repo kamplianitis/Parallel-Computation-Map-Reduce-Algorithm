@@ -13,6 +13,7 @@ This repository contains an implementation of MapReduce in Django, a high-level 
 - **Job Management**: Monitor and manage MapReduce jobs through a Django admin interface.
 
 ## Prerequisites
+  - Python v3
   - Installation of poetry. For more info visit this link: https://python-poetry.org/docs/
 
 ## Installation
