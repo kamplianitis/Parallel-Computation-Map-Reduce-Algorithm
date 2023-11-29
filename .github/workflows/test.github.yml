@@ -1,0 +1,33 @@
+name: Testing
+on:
+    push:
+        branches: 
+            - test
+    pull_request:
+        branches:
+            - test
+
+jobs:
+    testing:
+        name: testing
+        strategy:
+            matrix:
+              python-version: [3.9.17]
+              poetry-version: [1.5.1]
+              os: [ubuntu-latest]
+        runs-on: ${{matrix.os}}
+        steps:
+            - name: "Checkout the repo" 
+              uses: actions/checkout@v4
+            - name: "Install python"
+              uses: actions/setup-python@v4
+              with:
+                python-version: ${{matrix.python-version}}
+            - name: Install poetry
+              uses: abatilo/actions-poetry@v2.0.0
+              with:
+                poetry-version: ${{ matrix.poetry-version }}
+            - name: Install poetry with test environment
+              run: poetry install --with test
+            - name: Run testing
+              run: pytest
