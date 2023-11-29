@@ -50,10 +50,10 @@ This repository contains an implementation of MapReduce in Django, a high-level 
 4. Start the job and monitor its progress in the admin interface.
 
 ## Contributing
-If you would like to contribute to the development of this project, please follow the guidelines outlined in the CONTRIBUTING.md file.
+If you would like to contribute to the development of this project, please follow the guidelines outlined in the [CONTRIBUTING](./CONTRIBUTING.md) file.
 
 ## Licence
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
 ## Acknowledgements
  - Inspired by the MapReduce framework developed by Google.
