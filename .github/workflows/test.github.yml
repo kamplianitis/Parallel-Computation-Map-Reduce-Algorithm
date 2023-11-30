@@ -1,7 +1,7 @@
 name: Testing
 on:
     push:
-        branches: 
+        branches:
             - test
     pull_request:
         branches:
@@ -17,7 +17,7 @@ jobs:
               os: [ubuntu-latest]
         runs-on: ${{matrix.os}}
         steps:
-            - name: "Checkout the repo" 
+            - name: "Checkout the repo"
               uses: actions/checkout@v4
             - name: "Install python"
               uses: actions/setup-python@v4

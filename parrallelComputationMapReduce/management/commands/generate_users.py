@@ -1,4 +1,5 @@
 from typing import Any
+
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand, CommandParser
 from django.utils.crypto import get_random_string
@@ -15,7 +16,9 @@ class Command(BaseCommand):
             help="Indicates the number of users to be created",
         )
 
-        parser.add_argument("-p", "--prefix", type=str, help="Define a username prefix")
+        parser.add_argument(
+            "-p", "--prefix", type=str, help="Define a username prefix"
+        )
 
     def handle(self, *args: Any, **kwargs: Any) -> None:
         total = kwargs["total"]

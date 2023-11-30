@@ -43,4 +43,3 @@ This project and everyone participating in it are governed by the Code of Conduc
 By contributing to Django MapReduce, you agree that your contributions will be licensed under the MIT License.
 
 Thank you for your contribution!
-
