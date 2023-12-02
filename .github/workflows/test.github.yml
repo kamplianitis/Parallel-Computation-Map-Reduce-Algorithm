@@ -30,6 +30,4 @@ jobs:
             - name: Install poetry with test environment
               run: poetry install --with test
             - name: Run testing
-              env:
-                DJANGO_SETTINGS_MODULE: parrallelComputationMapReduce.settings
               run: pytest
