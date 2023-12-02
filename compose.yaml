@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${MR_DB_NAME}
+      POSTGRES_USER: ${MR_BB_USERNAME}
+      POSTGRES_PASSWORD: ${MR_DB_PASSWORD}
+  mr_backend:
+    build: .
+    environment:
+      DJANGO_PORT: ${DJANGO_PORT}
+      POSTGRES_DB_NAME: ${MR_DB_NAME}
+      POSTGRES_DB_USERNAME: ${MR_BB_USERNAME}
+      POSTGRES_DB_PASSWORD: ${MR_DB_PASSWORD}
+      POSTGRES_DB_HOST: ${MR_DB_HOST}
+      POSTGRES_DB_PORT: ${MR_DB_PORT}
+    ports:
+      - ${DJANGO_PORT}:${DJANGO_PORT}
+    depends_on:
+      - db
+volumes:
+  postgresdata:
