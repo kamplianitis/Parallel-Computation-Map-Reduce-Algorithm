@@ -17,7 +17,10 @@ class Command(BaseCommand):
         )
 
         parser.add_argument(
-            "-p", "--prefix", type=str, help="Define a username prefix"
+            "-p",
+            "--prefix",
+            type=str,
+            help="Define a username prefix",
         )
 
     def handle(self, *args: Any, **kwargs: Any) -> None:
@@ -31,6 +34,6 @@ class Command(BaseCommand):
                 username = "user_{number}".format(number=i)
             User.objects.create_user(
                 username=username,
-                email=f"{username}@gmail.com",
-                password=get_random_string(),
+                email=f"{username}@email.com",
+                password=f"kostakis_{i}",
             )

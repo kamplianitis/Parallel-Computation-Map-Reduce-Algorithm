@@ -9,6 +9,8 @@ services:
       POSTGRES_DB: ${MR_DB_NAME}
       POSTGRES_USER: ${MR_BB_USERNAME}
       POSTGRES_PASSWORD: ${MR_DB_PASSWORD}
+    ports:
+      - 5455:${MR_DB_PORT}
   mr_backend:
     build: .
     environment:
