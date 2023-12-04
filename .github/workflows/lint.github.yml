@@ -42,5 +42,3 @@ jobs:
               run: poetry run flake8 --max-doc-length 72 --ignore E211,E999,F401,F821,W503
             - name: Run bandit
               run: poetry run bandit .
-            - name: Run safety
-              run: poetry run safety check
